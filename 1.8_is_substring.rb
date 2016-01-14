@@ -1,16 +1,14 @@
-# Problem
+# ### Problem:
 # Assume you have a method isSubstring which checks if one word is asubstring of another. Given two strings, s1 and s2, write code to check If s2 is a rotation of s1 using only one call to isSubstring (e.g., "waterbottle" is a rotation of "erbottlewat").
 
+# ### Clarification:
+# the is_rotation method uses is_substring method to check if a string is a rotation of another string?
+# do string1 and string2 need to be equal lenghts to be consider a rotation?
 
-# Clarification
-# do string1 and string2 have the same lengths?
+# ### Assumptions:
+# string1 and string2 are equal lengths
 
-
-# Assumptions
-
-
-# Solution
-
+# ### Solution:
 
 module MyString
   module_function
@@ -33,5 +31,11 @@ module MyString
   end
 end
 
-
 class EmptyStringError < StandardError; end
+
+# ### Sample Output:
+str1 = "waterbottle"
+str2 = "erbottlewat"
+
+p MyString.is_rotation?(str1, str2)
+# => true

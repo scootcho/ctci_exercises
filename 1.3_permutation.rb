@@ -1,20 +1,17 @@
-# Problem:
+# ### Problem:
 # Given two strings, write a method to decide if one is a permutation of the other.
 
-
-# Clearifications:
+# ### Clearifications:
 # To confirm, permutation means an arrangement of objects in specific order. The order of the arrangement is important!!
 # Remember the permutation notation is (nPr) n=total number, r=number chosen
 # are these two strings equal lengths? or are we checking if the shorter string is a permutation of the longer string?
 # Is it case sensitive? is "Dog" and "God" permutation of the other?
 
-
-# Assumptions:
+# ### Assumptions:
 # Capitalzation, white spaces and punctuations are ignored
 # two strings should be equal lengths ignoring white spaces 
 
-
-# Solution:
+# ### Solution:
 
 module MyString
   module_function
@@ -77,17 +74,23 @@ module MyString
     hash1 == hash2 ? true : false
 
   end
-
 end
 
 class StringLengthError < StandardError; end
 
-
-# Benchmark:
-require 'benchmark'
-
+# ### Sameple Output:
 string1 = ('a'..'z').to_a.shuffle.join
 string2 = ('a'..'z').to_a.shuffle.join
+
+p MyString.permutation1?(string1, string2)
+# => true
+p MyString.permutation2?(string1, string2)
+# => true
+p MyString.permutation3?(string1, string2)
+# => true
+
+### Benchmark:
+require 'benchmark'
 
 n = 100000
 
@@ -97,7 +100,7 @@ Benchmark.bmbm do |x|
   x.report("permutation3?")  { n.times do; MyString.permutation3?(string1, string2); end }
 end
 
-# Benchmark Results:
+### Benchmark Results:
 # Rehearsal -------------------------------------------------
 # permutation1?   1.650000   0.000000   1.650000 (  1.652317)
 # permutation2?   2.460000   0.020000   2.480000 (  2.511160)
@@ -110,6 +113,5 @@ end
 # permutation3?   3.970000   0.010000   3.980000 (  3.984141)
 
 
-
-# Additional Resources:
+### Additional Resources:
 # https://en.wikipedia.org/wiki/Permutation#Permutations_in_computing
