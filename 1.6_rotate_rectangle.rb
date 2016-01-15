@@ -37,39 +37,45 @@ module Matrix
     cols = matrix[0].length
     row = 0
     col = 0
-    offset = 0
+    pointer = 0
 
     raise "please provide NxN matrix!" if cols != rows
 
-    while row*2 < rows - 1 do
-      # inverse_row = rows - row - 1     # -1 to adjust to referrencing array of arrays
+    while row*2 < rows do
+      inverse_row = rows - row - 1     # -1 to adjust to referrencing array of arrays
+      inverse_col = cols - col - 1     # -1 to adjust to index col in array
 
-      while col*2 + offset < cols - 1  do # -1 for the repeated corners of swapping the matix
-        inverse_row = rows - row - 1     # -1 to adjust to referrencing array of arrays
-        inverse_col = cols - col - 1    # -1 to adjust to index col in array
+      while pointer < inverse_col do
+
+        p "row: #{row}"
+        p "inverse_row: #{inverse_row}"
+        p "col: #{col}"
+        p "inverse_col: #{inverse_col}"
+        p "pointer: #{pointer}"
 
         # tem <- top 
-        temp = matrix[row][col + offset]
+        temp = matrix[row][col + pointer]
 
 				# top <- left
-				matrix[row][col + offset] = matrix[inverse_row - offset][col]
+        matrix[row][col + pointer] = matrix[inverse_row - pointer][col]
 
 				# left <- bottom
-				matrix[inverse_row - offset][col] = matrix[inverse_row][inverse_col - offset]
+        matrix[inverse_row - pointer][col] = matrix[inverse_row][inverse_col - pointer]
 
 				# bottom <- right 
-				matrix[inverse_row][inverse_col - offset] = matrix[row + offset][inverse_col]
+        matrix[inverse_row][inverse_col - pointer] = matrix[row + pointer][inverse_col]
 
 				# right <- temp 
-				matrix[row + offset][inverse_col] = temp 
+        matrix[row + pointer][inverse_col] = temp 
 
-        offset += 1
+        pointer += 1
           
-        #implementation works for 4x4 solution works but not 6x6. TODO implement solution.
+        p "********** inner ***********"
       end
+        p "********** outter ***********"
       row += 1
       col += 1
-      offset = 0
+      pointer = col
     end
     p matrix
   end
@@ -84,17 +90,16 @@ end
 # This algorithm is O(N2), which is the best we can do since any algorithm must touch all N2 elements.
 
 # ### Sample Ouput:
-
 # (1..16).to_a.each_slice(4).to_a
 matrix_4 = [[1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16]]
-matrix_5 = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]
-matrix_6 = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36]]
-# Matrix.rotate_inplace(matrix_4)
+p Matrix.rotate_inplace(matrix_4)
 # => [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-# Matrix.rotate_inplace(matrix_5)
-#=> [[5, 10, 15, 20, 25], [4, 9, 14, 19, 24], [3, 8, 13, 18, 23], [2, 7, 12, 17, 22], [1, 6, 11, 16, 21]]
-# Matrix.rotate_inplace(matrix_6)
-# => [[6, 12, 18, 24, 30, 36], [5, 11, 17, 23, 29, 35], [4, 10, 16, 22, 28, 34], [3, 9, 15, 21, 27, 33], [2, 8, 14, 20, 26, 32], [1, 7, 13, 19, 25, 31]]
+matrix_5 = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]
+p Matrix.rotate_inplace(matrix_5)
+# => [[21, 16, 11, 6, 1], [22, 17, 12, 7, 2], [23, 18, 13, 8, 3], [24, 19, 14, 9, 4], [25, 20, 15, 10, 5]]
+matrix_6 = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36]]
+p Matrix.rotate_inplace(matrix_6)
+# => [[31, 25, 19, 13, 7, 1], [32, 26, 28, 14, 8, 2], [33, 27, 15, 16, 20, 3], [34, 17, 21, 22, 10, 4], [35, 29, 23, 9, 11, 5], [36, 30, 24, 18, 12, 6]]
 
 
 # ### Additional Resources:
