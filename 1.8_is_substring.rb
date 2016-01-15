@@ -36,6 +36,5 @@ class EmptyStringError < StandardError; end
 # ### Sample Output:
 str1 = "waterbottle"
 str2 = "erbottlewat"
-
 p MyString.is_rotation?(str1, str2)
 # => true

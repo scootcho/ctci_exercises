@@ -69,12 +69,13 @@ module MyString
     end
   end
 
-  # We can reduce our space usage by a factor of eight by using a bit vector. TODO implement this faster version. Need to figure out how this reduce by factor of 8
+  # We can reduce our space usage by using a bit vector.
+  # TODO additional implementation: faster version.
 end
 
 class StringLengthError < StandardError; end
 
-### Sample Output:
+# ### Sample Output:
 
 s1 = "abc"
 s2 = "aabbc"

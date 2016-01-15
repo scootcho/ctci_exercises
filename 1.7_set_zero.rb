@@ -1,13 +1,9 @@
-# Problem
-# Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0
+# ### Problem:
+# # Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0
 
+# ### Clarification:
 
-# Clarification
-#
+# ### Assumptions:
 
-
-# Assumptions
-
-
-# Solution
-# TODO comeback to implement
+# ### Solution:
+# TODO implement solution

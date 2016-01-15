@@ -89,7 +89,7 @@ p MyString.permutation2?(string1, string2)
 p MyString.permutation3?(string1, string2)
 # => true
 
-### Benchmark:
+# ### Benchmark:
 require 'benchmark'
 
 n = 100000
@@ -100,7 +100,7 @@ Benchmark.bmbm do |x|
   x.report("permutation3?")  { n.times do; MyString.permutation3?(string1, string2); end }
 end
 
-### Benchmark Results:
+# ### Benchmark Results:
 # Rehearsal -------------------------------------------------
 # permutation1?   1.650000   0.000000   1.650000 (  1.652317)
 # permutation2?   2.460000   0.020000   2.480000 (  2.511160)
@@ -113,5 +113,5 @@ end
 # permutation3?   3.970000   0.010000   3.980000 (  3.984141)
 
 
-### Additional Resources:
+# ### Additional Resources:
 # https://en.wikipedia.org/wiki/Permutation#Permutations_in_computing

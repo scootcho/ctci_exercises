@@ -43,7 +43,7 @@ class SinglyLinkedList
   end
 
   def remove_duplicates_two_pointers
-    #TODO use two pointers without a buffer
+    #TODO additional implementation: use two pointers without a buffer
   end
 
 end
@@ -59,6 +59,7 @@ linkedlist.add("third")
 # => #<SinglyLinkedList:0x007f8d41a9e1f8 @head=#<Element:0x007f8d41a9e1d0 @data="first", @next=#<Element:0x007f8d41a9df28 @data="second", @next=#<Element:0x007f8d41a9ded8 @data="third", @next=#<Element:0x007f8d41a9de88 @data="fourth", @next=#<Element:0x007f8d41a9de38 @data="second", @next=#<Element:0x007f8d41a9dde8 @data="third", @next=nil>>>>>>, @tail=#<Element:0x007f8d41a9dde8 @data="third", @next=nil>>
 p linkedlist.remove_duplicates
 # => #<SinglyLinkedList:0x007ff924919c48 @head=#<Element:0x007ff924919c20 @data="first", @next=#<Element:0x007ff924919b30 @data="fourth", @next=#<Element:0x007ff924919ae0 @data="second", @next=#<Element:0x007ff924919a90 @data="third", @next=nil>>>>, @tail=#<Element:0x007ff924919a90 @data="third", @next=nil>>
+
 
 # ### Additional Resources:
 # http://www.sitepoint.com/ruby-uses-memory/
