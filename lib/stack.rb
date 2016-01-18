@@ -22,18 +22,20 @@ class Stack
   def pop
     raise OperationError.new("The stack is empty or nil!") if @top.data == nil
     if @top.next == nil
-      value = @top
-      @top.data = nil
+      element = @top.dup
+      @top.data = nil #manually setting data to nil to prevent @top = nil
       @bottom = @top
-      p value
+      element
     else
+      element = @top
       @top = @top.next
+      element
     end
   end
 
   def peek
     raise OperationError.new("The stack is empty or nil!") if @top.data == nil
-    p @top.data
+    @top.data
   end
 
 end
