@@ -23,7 +23,7 @@
 # explained
 # place p1 & p2 by k nodes apart. E.g., k = 3, p1 = 0, p2 = 3, when p2 hits last node, p1 is at the location of Length - k
 
-require_relative './singly_linked_list.rb'
+require_relative './lib/singly_linked_list.rb'
 
 class SinglyLinkedList
 

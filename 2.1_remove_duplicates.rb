@@ -12,7 +12,7 @@
 
 # ### Solution:
 
-require_relative './singly_linked_list'
+require_relative './lib/singly_linked_list'
 
 class SinglyLinkedList 
 
