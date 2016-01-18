@@ -38,6 +38,10 @@ class Stack
     @top.data
   end
 
+  def is_empty?
+    @top.data == nil ? true : false
+  end
+
 end
 
 class OperationError < StandardError; end
