@@ -41,9 +41,9 @@ class Tree
   # Pre-Order Traversal (self, left subtree, right subtree)
   def pre_order_traversal(node= @root)
     return if (node == nil)
+    puts node.value.to_s
     pre_order_traversal(node.left)
     pre_order_traversal(node.right)
-    puts node.value.to_s
   end
 
   # In-Order Traversal : (left subtree, self, right subtree)
@@ -60,9 +60,9 @@ class Tree
   # Post-Order Traversal (left subtree, right subtree, self)
   def post_order_traversal(node = @root)
       return if (node == nil)
-      puts node.value.to_s
       post_order_traversal(node.left)
       post_order_traversal(node.right)
+      puts node.value.to_s
   end
 
 end

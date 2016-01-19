@@ -60,7 +60,7 @@ describe 'Tree' do
     output = capture(:stdout) do
       @tree.pre_order_traversal
     end
-    expect(output).to eq("1\n2\n4\n5\n3\n")
+    expect(output).to eq("3\n2\n1\n5\n4\n")
   end
 
   it 'traverse a tree in in-order fashion' do
@@ -76,7 +76,7 @@ describe 'Tree' do
     output = capture(:stdout) do
       @tree.post_order_traversal
     end
-    expect(output).to eq("3\n2\n1\n5\n4\n")
+    expect(output).to eq("1\n2\n4\n5\n3\n")
   end
 
 end
