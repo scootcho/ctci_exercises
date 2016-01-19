@@ -45,9 +45,11 @@ class Tower
 
   def add(destination, disk)
 		if !destination.is_empty? && destination.peek <= disk
-      puts "Error placing disk #{disk}"
+      p "Error placing disk #{disk}"
 		else
 			destination.push(disk)
+      p "***** Result:"
+      p destination
     end
   end
 
@@ -60,7 +62,10 @@ class Tower
   def move_disks(num_disks, origin, destination, buffer)
     raise ArgumentError, "sorry you cannot move more disks than you have in the towers" if num_disks > @num_disks
     if num_disks == 1
-      puts "Move Disc from orgin to destination!"
+      p "***** Move Disc from:"
+      p origin
+      p "***** To:"
+      p destination
       move_top(origin, destination)
     else
       move_disks(num_disks - 1, origin, buffer, destination) # move top n - 1 disks from origin to buffer, using destination * as a buffer.

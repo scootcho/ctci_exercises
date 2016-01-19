@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/queue'
+require_relative '../../lib/queue'
 
 describe 'Queue' do
   before (:each) do

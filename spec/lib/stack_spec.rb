@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/stack'
+require_relative '../../lib/stack'
 
 describe 'Stack' do
   before (:each) do

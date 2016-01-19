@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/singly_linked_list'
+require_relative '../../lib/singly_linked_list'
 
 describe 'Singlely Linked List' do
 
