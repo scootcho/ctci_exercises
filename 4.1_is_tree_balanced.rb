@@ -89,6 +89,20 @@ end
 
 
 # ### Sample Output:
+tree = Tree.build_tree([6,3,2,1,7,9,8])
+# above produces the following tree:
+#
+#         6
+#        / \
+#       3   7
+#      /     \
+#     2       9
+#    /       /  
+#   1       8    
+#
+p Tree.is_balanced?(tree.root)
+# => false
+#
 tree = Tree.build_tree([6,3,2,1,5,4,7,8,9])
 # above produces the following tree:
 #
@@ -100,7 +114,7 @@ tree = Tree.build_tree([6,3,2,1,5,4,7,8,9])
 #    /  /      \
 #   1  4        9
 #
-p Tree.is_balanced?(tree.root)
+# p Tree.is_balanced?(tree.root)
 #
 # => false
 # the tree isn't balanced because starting node 7 the subtree is different in height more than 1
@@ -116,7 +130,7 @@ tree = Tree.build_tree([6,3,2,1,5,4,8,7,9])
 #    /  /      
 #   1  4        
 #
-p Tree.is_balanced?(tree.root)
+# p Tree.is_balanced?(tree.root)
 # => true
 
 
