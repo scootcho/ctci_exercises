@@ -24,12 +24,24 @@ class MyCue
 
   def enqueue(value)
     # push onto stack_newest
-		@stack_newest.push(value)
+    @stack_newest.push(value)
   end
 
+  def peek
+    shift_stacks
+    @stack_oldest.peek
+  end
+
+  def dequeue
+    shift_stacks
+    @stack_oldest.pop
+  end
+
+  private
+  
   # Move elements from stack_newest into stack_oldest in order to perform operations on stack_oldest.
   # we only need to move elements from stack_newest to stack_oldes once stack_oldest is empty and there is a dequeque or peek operation
-	def shift_stacks
+  def shift_stacks
     if @stack_oldest.top.data == nil
       while @stack_newest.top.data != nil
         value = @stack_newest.pop.data
@@ -37,16 +49,7 @@ class MyCue
       end
     end
   end
-	
-	def peek
-		shift_stacks
-    @stack_oldest.peek
-  end
 
-  def dequeue
-    shift_stacks
-		@stack_oldest.pop
-  end
 end
 
 
