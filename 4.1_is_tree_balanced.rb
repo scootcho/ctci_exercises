@@ -29,54 +29,54 @@ class Tree
 #
 #  def Tree.is_balanced?(root)
 #    return true if root == nil
-#		
-#		height_diff = get_height(root.left) - get_height(root.right) 
+#   
+#   height_diff = get_height(root.left) - get_height(root.right) 
 #
 #    if height_diff > 1
 #      return false
-#		else
-#			return is_balanced?(root.left) && is_balanced?(root.right)
-#	  end	
+#   else
+#     return is_balanced?(root.left) && is_balanced?(root.right)
+#   end 
 #  end
 #  This works but not very efficient. On each node, we recurse through its entire subtree. This means that get_height is called repeatedly on the same nodes. The algorithm is therefore O(N^2).
 
   def Tree.check_height(root)
-		if root == nil
-			return 0
+    if root == nil
+      return 0
     end
     p "node: #{root}, node value: #{root.value}"
 
     p "traversing left...."
-		left_height = check_height(root.left)
+    left_height = check_height(root.left)
 
     p "left_height: #{left_height}"
     p "eval left...."
-		if left_height == -1 
-			return -1
+    if left_height == -1 
+      return -1
     end
-		
+    
     p "traversing right...."
-		right_height = check_height(root.right)
+    right_height = check_height(root.right)
 
     p "right_height: #{right_height}"
     p "eval right...."
-		if right_height == -1 
-			return -1
-	  end	
+    if right_height == -1 
+      return -1
+    end 
     
     p "left_height: #{left_height}, right_height: #{right_height}"
-		height_diff = left_height - right_height
+    height_diff = left_height - right_height
 
     if height_diff.abs > 1
       p "===== subtree difference > 1 ======"
-			return -1
-		else 
+      return -1
+    else 
       p "===== evaluating ======"
       p [left_height, right_height].max + 1
       return [left_height, right_height].max + 1
     end
   end
-	
+  
   def Tree.is_balanced?(root)
     if check_height(root) == -1
       return false
@@ -84,7 +84,7 @@ class Tree
       return true
     end
   end
-	
+  
 end
 
 

@@ -47,13 +47,13 @@ class SinglyLinkedList
     slow = list.head
     fast = list.head
 
-		# Find meeting point
-		while fast != nil && fast.next != nil do
-			slow = slow.next
-			fast = fast.next.next
-			if slow == fast
+    # Find meeting point
+    while fast != nil && fast.next != nil do
+      slow = slow.next
+      fast = fast.next.next
+      if slow == fast
         p "loop found! starting at node #{slow}"
-				break
+        break
       end
     end
   end

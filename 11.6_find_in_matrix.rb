@@ -18,16 +18,16 @@ module Matrix
   def find_element(matrix, element)
     raise ArgumentError.new("Please provide a Matrix (array of arrays)") unless matrix.is_a?(Array)
 
-		row = 0
+    row = 0
     col = matrix[0].length - 1 #index of column end
 
-		while row < matrix.length && col >= 0 do
-			if matrix[row][col] == element
+    while row < matrix.length && col >= 0 do
+      if matrix[row][col] == element
         puts "element found at [#{row}][#{col}]"
-				return true
-			elsif matrix[row][col] > element
+        return true
+      elsif matrix[row][col] > element
         col -= 1
-			else
+      else
         row += 1
       end
     end

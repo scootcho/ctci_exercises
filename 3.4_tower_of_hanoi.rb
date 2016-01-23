@@ -44,10 +44,10 @@ class Tower
   end
 
   def add(destination, disk)
-		if !destination.is_empty? && destination.peek <= disk
+    if !destination.is_empty? && destination.peek <= disk
       p "Error placing disk #{disk}"
-		else
-			destination.push(disk)
+    else
+      destination.push(disk)
       p "***** Result:"
       p destination
     end
@@ -55,8 +55,8 @@ class Tower
 
   # move top from origin to destination
   def move_top(origin, destination)
-		disk = origin.pop.data
-		add(destination, disk)
+    disk = origin.pop.data
+    add(destination, disk)
   end
 
   def move_disks(num_disks, origin, destination, buffer)

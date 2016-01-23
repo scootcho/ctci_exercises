@@ -48,8 +48,8 @@ class Tree
       p "creating new list for level"
       p "node: #{node.value}"
       list = SinglyLinkedList.new
-			# Levels are always traversed in order. So, if this is the first time we've visited level i,
-			# we must have seen levels 0 through i - 1. We can therefore safely add the level at the end.
+      # Levels are always traversed in order. So, if this is the first time we've visited level i,
+      # we must have seen levels 0 through i - 1. We can therefore safely add the level at the end.
       lists << list
     else
       p "adding to level linked list"
@@ -57,9 +57,9 @@ class Tree
       list = lists[level]
     end
     list.add(node.value)
-		create_level_linked_list(node.left, lists, level + 1)
-		create_level_linked_list(node.right, lists, level + 1)
-		return lists
+    create_level_linked_list(node.left, lists, level + 1)
+    create_level_linked_list(node.right, lists, level + 1)
+    return lists
   end
 
   # TODO additional implementation - breadth first search
