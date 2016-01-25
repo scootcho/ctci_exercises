@@ -19,7 +19,7 @@
 # => "A"
 #
 # String to UTF-8 
-# "\u2713".encode('utf-8')
+# "\u2713".encode('utf-8') #encode unicode to string
 # => "✓"
 # "a".ord.to_s(16)
 # => "61"
@@ -92,3 +92,4 @@ p MyString.has_uniq_chars?(s2)
 # https://en.wikipedia.org/wiki/Hexadecimal
 # http://stackoverflow.com/questions/5924105/how-many-characters-can-be-mapped-with-unicode
 # https://en.wikipedia.org/wiki/Bit_array
+# http://stackoverflow.com/questions/700187/unicode-utf-ascii-ansi-format-differences

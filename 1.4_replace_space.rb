@@ -19,11 +19,23 @@ module MyString
   end
 
   def replace_space2(string)
-    # TODO implement without builtin gsub
+    i = 0
+    while i < string.length
+      if string[i] == " "
+        string[i] = "%20"
+        i += 1
+      else
+        i += 1
+      end
+    end
+    string
   end
 end
 
+
 # ### Sample Output:
 string = "abc   "
-p MyString.replace_space(string)
+MyString.replace_space(string)
+# => "abc%20%20%20"
+MyString.replace_space2(string)
 # => "abc%20%20%20"

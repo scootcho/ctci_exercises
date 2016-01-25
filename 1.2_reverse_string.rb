@@ -9,6 +9,9 @@
 
 # ### Assumption:
 # null = "\u0000" in ruby
+# E.g.,
+# irb> null_string = "\0"
+# => "\u0000"
 # "\u0000" is treated as a character in a string.
 # abc = "ab\u0000cd\u0000\ef\u0000"; abc.reverse => "\u0000f\e\u0000dc\u0000ba"
 # This means that if there is a null-terminated value, it will be treated as a character and be reversed along with other characters in the string.
@@ -20,17 +23,17 @@ module MyString
 
   def reverse(string)
     i = 1
-    reversed_word = []
+    reversed_chars = []
     while i < string.length + 1 do
-      reversed_word << string[-i] #this will start from -1, -2, -3, ... and put them into the new array
+      reversed_chars << string[-i] #this will start from -1, -2, -3, ... and put them into the new array
       i += 1
     end
-    reversed_word.join("")
+    reversed_chars.join("")
   end
 end
 
 # ### Sample Output:
-p abc = "ab\u0000cd\u0000\ef\u0000"
+abc = "ab\u0000cd\u0000\ef\u0000"
 # => "ab\u0000cd\u0000\ef\u0000"
 p MyString.reverse(abc)
 # => "\u0000f\e\u0000dc\u0000ba"

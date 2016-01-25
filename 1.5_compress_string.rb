@@ -29,6 +29,7 @@ module MyString
 
 end
 
+
 # ### Sample Output:
 string = "aabcccccaaa"
 p MyString.compress1(string)
