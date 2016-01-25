@@ -5,6 +5,7 @@
 # the given node will be in the middle of a signly linked list. Meaning it won't be either the first or last node in the list?
 
 # ### Solution:
+# We can't change the previous node that is pointing to the current node.
 # The solution is simply to copy the data from the next node over to the current node, and then to delete the next node.
 # if the node to be deleted is the last node in the linked list. That's ok—your interviewer wants you to point that out, and to discuss how to handle this case
 # because it's a singly linkedlist we only have the pointer address to the next node and not the previous one. Hence if the given node is the last, the solution won't work as we can replace the previous node as the last node in the linked list

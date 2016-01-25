@@ -1,9 +1,9 @@
 # ### Problem:
-# Write code to partition a linked list around a value x, such that all nodes less than x come before alt nodes greater than or equal to x.
+# Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes greater than or equal to x.
 
 # ### Clarification:
 # are we sorting the linked list by the given value? what if none of the nodes holds this value?
-# E.g. LinkedList = [ 2,23, 52, 64, 10, 49], x = 50, partitioned_before_x = [ 2, 23, 49 ], partitioned_after_x = [ 52, 64]
+# E.g. LinkedList = [2 ,23, 52, 64, 10, 49], x = 50, partitioned_before_x = [ 2, 23, 49 ], partitioned_after_x = [ 52, 64]
 # Are we sorting the list on either side around value x?
 
 # ### Assumptions:

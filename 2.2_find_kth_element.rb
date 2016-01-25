@@ -55,7 +55,8 @@ linkedlist.add("third")
 linkedlist.add("fourth")
 p linkedlist.kth_to_last(1) 
 # => #<Element:0x007ff7041bb4a0 @data="fourth", @next=nil>
-
+p linkedlist.kth_to_last(2) 
+# => #<Element:0x007f808a89c698 @data="third", @next=#<Element:0x007f808a89c648 @data="fourth", @next=nil>>
 
 # ### Additional Resources:
 # http://carlosplusplus.github.io/blog/2013/08/08/linked-lists-and-ruby/
