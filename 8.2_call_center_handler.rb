@@ -85,7 +85,7 @@ class CallHandler
   end
 
   def update(call)
-    p "checking for waiting callers..." 
+    puts "checking for waiting callers..." 
     dispatch_call 
   end
 
