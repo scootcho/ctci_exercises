@@ -8,7 +8,7 @@
 
 
 class DirectedGraph
-  attr_reader :graph,  :vertices
+  attr_reader :graph,  :vertices, :adjacency_matrix
 
   def initialize(*vertices)
     @graph = {}       # the graph // {node => { edge1 => weight, edge2 => weight}, node2 => ...
@@ -42,7 +42,36 @@ class DirectedGraph
     #   @graph[t] = { s => w }     
     # end
     # End code for non directed graph (ie. deleteme if you want it directed)
+  end
 
+  def adjacency_matrix
+    size = @vertices.length
+    @adjacency_matrix = Array.new(size,0) { Array.new(size,0) }
+    
+    @adjacency_matrix.each.with_index do |row, row_index|
+      row.each.with_index do |col, col_index|
+        from = @vertices[row_index]
+        to = @vertices[col_index]
+
+        puts "from: #{from}, to: #{to}"
+        if @graph[from] == nil
+          @adjacency_matrix[row_index][col_index] = 0
+        elsif @graph[from][to] != nil
+          @adjacency_matrix[row_index][col_index] = 1
+        else
+          @adjacency_matrix[row_index][col_index] = 0
+        end
+      end
+    end
+    @adjacency_matrix
+  end
+
+  def depth_first_search
+    # TODO implement solutoin traversal
+  end
+
+  def breadth_first_search
+    # TODO implement solutoin traversal
   end
 end
 
