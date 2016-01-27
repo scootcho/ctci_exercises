@@ -22,7 +22,7 @@ class Tree
   # Binary Search Tree Insert
   def insert(value)
     puts "inserting: " + value.to_s
-    @root.value = value if @root.value == nil
+    return @root.value = value if @root.value == nil
 
     current_node = @root
     while current_node != nil
@@ -60,7 +60,7 @@ class Tree
   end 
  
   # Pre-Order Traversal (self, left subtree, right subtree)
-  def pre_order_traversal(node= @root)
+  def pre_order_traversal(node=@root)
     return if (node == nil)
     puts node.value.to_s
     pre_order_traversal(node.left)
@@ -71,15 +71,15 @@ class Tree
   # Display smaller children first (by going left)
   # Then display the value in the current node 
   # Then display the larger children on the right
-  def in_order_traversal(node = @root)
+  def in_order_traversal(node=@root)
     return if (node == nil)
     in_order_traversal(node.left)
     puts node.value.to_s
     in_order_traversal(node.right)
   end
-
+ 
   # Post-Order Traversal (left subtree, right subtree, self)
-  def post_order_traversal(node = @root)
+  def post_order_traversal(node=@root)
     return if (node == nil)
     post_order_traversal(node.left)
     post_order_traversal(node.right)
@@ -88,8 +88,6 @@ class Tree
 
 end
 
-p tree = Tree.build_tree([3,2,1,5,4])
-p tree.pre_order_traversal
 
 # Resources:
 # http://www.thelearningpoint.net/computer-science/basic-data-structures-in-ruby---binary-search-tre

@@ -8,45 +8,42 @@
 
 
 class DirectedGraph
-  attr_reader :graph, :nodes
+  attr_reader :graph,  :vertices
 
-  def initialize
-    @graph = {}  # the graph // {node => { edge1 => weight, edge2 => weight}, node2 => ...
-    @nodes = Array.new     
+  def initialize(*vertices)
+    @graph = {}       # the graph // {node => { edge1 => weight, edge2 => weight}, node2 => ...
+    @vertices = []
+    vertices.each { |vertex| @vertices << vertex }
   end
 
-  def add_node(s)
-    if @nodes.include?(s)
-      puts "the node already exists!"
-    else
-      @nodes << s
+  def add_vertices(*vertices)
+    vertices.each do |vertex|
+      if !@vertices.include?(vertex) 
+        @vertices << vertex
+      else
+        puts "#{vertex} vertex already exist!"
+      end
     end
   end
     
-  def add_edge(s,t,w)     # s= source, t= target, w= weight
+  def add_edge(s, t, w)     # s=source, t=target, w=weight
+    add_vertices(s,t)
+
     if @graph.has_key?(s)
       @graph[s][t] = w         
     else
-      @graph[s] = {t=>w}     
+      @graph[s] = { t => w }     
     end
     
     # Begin code for non directed graph (inserts the other edge too)
-    # if (not @graph.has_key?(t))
-    #   @graph[t] = {s=>w}
+    # if @graph.has_key?(t)
+    #   @graph[t][s] = w         
     # else
-    #   @graph[t][s] = w
+    #   @graph[t] = { s => w }     
     # end
     # End code for non directed graph (ie. deleteme if you want it directed)
 
-    # add source or target nodes if nonexistent
-    if !@nodes.include?(s)
-      @nodes << s
-    end
-    if !@nodes.include?(t)
-      @nodes << t
-    end 
   end
-  
 end
 
 
