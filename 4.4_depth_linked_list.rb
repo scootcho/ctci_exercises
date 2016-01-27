@@ -45,15 +45,15 @@ class Tree
   def create_level_linked_list(node, lists, level)
     return if (node == nil) #base case
     if lists.size == level
-      p "creating new list for level"
-      p "node: #{node.value}"
+      p "creating new list for level #{level}"
+      p "list size: #{lists.size}, level: #{level}, node: #{node.value}"
       list = SinglyLinkedList.new
       # Levels are always traversed in order. So, if this is the first time we've visited level i,
       # we must have seen levels 0 through i - 1. We can therefore safely add the level at the end.
       lists << list
     else
-      p "adding to level linked list"
-      p "node: #{node.value}"
+      p "adding to level #{level} linked list"
+      p "list size: #{lists.size}, level: #{level}, node: #{node.value}"
       list = lists[level]
     end
     list.add(node.value)

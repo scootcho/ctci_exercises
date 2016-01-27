@@ -73,7 +73,7 @@ class Tree
     else 
       p "===== evaluating ======"
       p [left_height, right_height].max + 1
-      return [left_height, right_height].max + 1
+      return 1 + [left_height, right_height].max
     end
   end
   
@@ -120,6 +120,7 @@ tree = Tree.build_tree([6,3,2,1,5,4,7,8,9])
 # the tree isn't balanced because starting node 7 the subtree is different in height more than 1
 #
 tree = Tree.build_tree([6,3,2,1,5,4,8,7,9])
+p Tree.is_balanced?(tree.root)
 # above produces the following tree:
 #
 #         6

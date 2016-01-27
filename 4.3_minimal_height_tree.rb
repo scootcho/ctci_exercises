@@ -76,7 +76,7 @@ class Tree
 
   def Tree.sort_for_min(array, start, finish, result=[])
     if start > finish
-      return 0
+      return
     end
 
     mid = (start + finish) / 2
