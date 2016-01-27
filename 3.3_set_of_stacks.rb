@@ -5,7 +5,7 @@
 
 # ### Clarification:
 # Is there a minimum numbers of stacks we're initializing?
-# What about the capacity of the stack? Are we allowing the size of the stack to be passed in or are we hardcoding the stack size?`
+# What about the capacity of the stack? Are we allowing the size of the stack to be passed in or are we hardcoding the stack size?
 
 # ### Design Algorithm:
 # SetOfStack class has both push() and pop() functions that behaves just like the Stack class.

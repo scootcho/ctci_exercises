@@ -37,11 +37,8 @@ class StackWithMin < Stack
   end
 
   def pop
-    if @top.data == @min_stack.peek
-      @min_stack.pop
-    else
-      super
-    end  
+    super
+    @min_stack.pop if @top.data == @min_stack.peek
   end
 
   def min
@@ -62,7 +59,9 @@ p minstack.min
 minstack.push(2)
 p minstack.min
 # => 2
-
+p minstack.pop
+p minstack
+p minstack.min
 
 # Additional Resources
 # http://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/

@@ -37,19 +37,19 @@ class Tower
     @origin = Stack.new()
     @buffer = Stack.new()
     @destination = Stack.new()
-    disks = (1..num_disks).to_a.reverse
+    disks = (1..@num_disks).to_a.reverse
     disks.each { |disk| @origin.push(disk) }
-    p "Initialized Tower with #{@num_disks} disks"
+    puts "Initialized Tower with #{@num_disks} disks"
     @origin 
   end
 
   def add(destination, disk)
     if !destination.is_empty? && destination.peek <= disk
-      p "Error placing disk #{disk}"
+      puts "Error placing disk #{disk}"
     else
       destination.push(disk)
-      p "***** Result:"
-      p destination
+      puts "***** Result:"
+      puts destination
     end
   end
 
@@ -62,9 +62,9 @@ class Tower
   def move_disks(num_disks, origin, destination, buffer)
     raise ArgumentError, "sorry you cannot move more disks than you have in the towers" if num_disks > @num_disks
     if num_disks == 1
-      p "***** Move Disc from:"
+      puts "***** Move Disc from:"
       p origin
-      p "***** To:"
+      puts "***** To:"
       p destination
       move_top(origin, destination)
     else
