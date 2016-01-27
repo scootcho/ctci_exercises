@@ -39,10 +39,10 @@ end
 # ### Sample Output:
 
 graph = DirectedGraph.new
-graph.add_node("a")
-graph.add_node("b")
-graph.add_node("c")
-graph.add_node("d")
+graph.add_vertices("a")
+graph.add_vertices("b")
+graph.add_vertices("c")
+graph.add_vertices("d")
 graph.add_edge("a", "b", 1)
 graph.add_edge("b", "c", 2)
 p graph.route_between("a", "b")
