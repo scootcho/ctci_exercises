@@ -36,5 +36,5 @@ end
 # ### Sample Output:
 a1 = (1..10).to_a
 a2 = (11..20).to_a
-p combine_arrays(a1, a2)
+p combine_arrays(a2, a1)
 # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]

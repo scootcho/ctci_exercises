@@ -21,6 +21,7 @@ def find_in_array(array, num)
   end
 end
 
+
 # ### Sample Output:
 array = [3, 9, 10, 0, 8, 5, 1, 2, 4, 6, 7]
 p find_in_array(array, 2)
