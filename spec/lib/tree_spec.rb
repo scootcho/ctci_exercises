@@ -1,4 +1,4 @@
-require 'active_support/core_ext/kernel/reporting'
+require 'active_support/core_ext/kernel/reporting' #use ruby 2.2.2 or above
 require_relative '../../lib/tree'
 
 describe 'Tree' do

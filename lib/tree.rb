@@ -7,7 +7,7 @@ class Tree
   attr_accessor :root
 
   def initialize(value = nil)
-    puts "initializing with " + value.to_s
+    value == nil ? (puts "initailizing with empty root") : ("initializing with #{value.to_s}")
     @root = Node.new(value)
   end
 
@@ -19,9 +19,11 @@ class Tree
     return tree
   end
  
+  # Binary Search Tree Insert
   def insert(value)
     puts "inserting: " + value.to_s
-    @root = Node.new(value) if @root.value == nil
+    @root.value = value if @root.value == nil
+
     current_node = @root
     while current_node != nil
       if (value < current_node.value) && (current_node.left == nil)
@@ -35,6 +37,25 @@ class Tree
       else
         return
       end
+    end
+  end 
+
+  # Binary Tree Insert 
+  def insert_bt(value)
+    puts "inserting: " + value.to_s
+    current_node = @root
+    if @root.value == nil
+      @root.value = value
+    elsif (current_node.left == nil)
+      current_node.left = Node.new(value)
+    elsif (current_node.right == nil)
+      current_node.right = Node.new(value)
+    elsif  current_node.left.value == nil
+      current_node.left = value
+    elsif  current_node.right.value == nil
+      current_node.rigth = value
+    else
+      return
     end
   end 
  
@@ -59,10 +80,18 @@ class Tree
 
   # Post-Order Traversal (left subtree, right subtree, self)
   def post_order_traversal(node = @root)
-      return if (node == nil)
-      post_order_traversal(node.left)
-      post_order_traversal(node.right)
-      puts node.value.to_s
+    return if (node == nil)
+    post_order_traversal(node.left)
+    post_order_traversal(node.right)
+    puts node.value.to_s
   end
 
 end
+
+p tree = Tree.build_tree([3,2,1,5,4])
+p tree.pre_order_traversal
+
+# Resources:
+# http://www.thelearningpoint.net/computer-science/basic-data-structures-in-ruby---binary-search-tre
+# http://www.mikeperham.com/2014/11/26/building-a-binary-tree-with-enumerable/
+# https://github.com/evolve75/RubyTree
